@@ -11,15 +11,17 @@ operations required to produce N smileys from 1 initial smiley.
 using namespace std;
 
 int count(int n) {
+
+  // if prime return n
   int flag = 1;
   for (int i = 2; i < sqrt(n); ++i) {
     if (n % i == 0)
       flag = 0;
   }
-
   if (flag)
     return n;
 
+  // largest factor
   int lar_fact = 0;
   for (int i = n/2; i > 0; --i) {
     if (n % i == 0) {
